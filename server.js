@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
+
 
 var app = express();
 hbs.registerPartials(__dirname + '/views/partials');
@@ -65,8 +67,8 @@ app.get('/bad', (req,res) => {
 
 });
 
-app.listen(3000, () => {
-  console.log('server is up and will b ready in 3000ms');
+app.listen(port, () => {
+  console.log(`server is up on port ${port} and will b ready in 3000ms`);
 });
 
 module.exports.app = app;
